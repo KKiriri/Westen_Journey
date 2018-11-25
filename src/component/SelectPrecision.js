@@ -25,7 +25,6 @@ class ControlledOpenSelect extends React.Component {
   };
 
   handleChange = event => {
-
     this.setState({ [event.target.name]: event.target.value });
   };
 
@@ -38,16 +37,16 @@ class ControlledOpenSelect extends React.Component {
   };
 
   render() {
-
     const { classes } = this.props;
 
     return (
-      <form autoComplete="off" onsubmit = {console.log(this.state.selector)}>
+      <form autoComplete="off">
         <Button className={classes.button} onClick={this.handleOpen}>
-          Choose the target
+          Select Precision
         </Button>
+
         <FormControl className={classes.formControl}>
-          <InputLabel htmlFor="demo-controlled-open-select">Target</InputLabel>
+          <InputLabel htmlFor="demo-controlled-open-select">Precision</InputLabel>
           <Select
             open={this.state.open}
             onClose={this.handleClose}
@@ -62,16 +61,11 @@ class ControlledOpenSelect extends React.Component {
             <MenuItem value="">
               <em>None</em>
             </MenuItem>
-            <MenuItem value='man'>Man</MenuItem>
-            <MenuItem value='dog'>Dog</MenuItem>
-            <MenuItem value='cat'>Cat</MenuItem>
-            <MenuItem value='children'>Children</MenuItem>
-            <MenuItem value='danger target'>Danger</MenuItem>
-
+            <MenuItem value={95}>Very accurate</MenuItem>
+            <MenuItem value={90}>Accurate</MenuItem>
+            <MenuItem value={80}>vague</MenuItem>
           </Select>
         </FormControl>
-
-
       </form>
     );
   }

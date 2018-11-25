@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import Selector from './TargetSelect';
-
+import Selector1 from './TargetSelect';
+import Selector2 from './SelectPrecision';
+import Selector3 from './SelectorMod';
 const styles = theme => ({
   container: {
     display: 'flex',
@@ -60,26 +61,15 @@ class FilledTextFields extends React.Component {
           variant="filled"
         />
 
-        <TextField
-          id="filled-multiline-flexible"
-          label="Multiline"
-          multiline
-          rowsMax="4"
-          value={this.state.multiline}
-          onChange={this.handleChange('multiline')}
-          className={classes.textField}
-          margin="normal"
-          helperText="hello"
-          variant="filled"
-        />
+
 
 
         <TextField
           id="filled-full-width"
           label="Label"
           style={{ margin: 8 }}
-          placeholder="Placeholder"
-          helperText="Full width!"
+          placeholder=""
+          helperText="configuration name"
           fullWidth
           margin="normal"
           variant="filled"
@@ -88,8 +78,11 @@ class FilledTextFields extends React.Component {
           }}
         />
 
-        <Selector/>
+        <Selector1/>
 
+
+        <Selector2/>
+        <Selector3/>
       </form>
     );
   }
